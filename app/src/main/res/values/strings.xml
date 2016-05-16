@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Oraculo</string>
+    <string name="action_settings">Settings</string>
+    <string name="pitching">Pitching</string>
+    <string name="teamsHitting">Hitting Team</string>
+    <string name="roster">Roster</string>
+    <string name="hitting">Hitting</string>
+    <string name="bullpen">Bullpen</string>
+</resources>

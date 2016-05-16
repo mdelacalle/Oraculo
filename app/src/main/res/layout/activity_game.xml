@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/table"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mdelacalle.com.oraculo.GameActivity"
+    android:visibility="visible">
+
+    <ImageView
+        android:layout_width="2000dp"
+        android:layout_height="2000dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:visibility="visible"
+        android:id="@+id/arrieta"
+        android:src="@mipmap/arrieta"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Away"
+        android:id="@+id/away"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="3-0"
+        android:id="@+id/recordAway"
+        android:layout_alignParentTop="true"
+        android:paddingStart="10dp"
+        android:layout_toEndOf="@id/away"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Home"
+        android:id="@+id/home"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0-3"
+        android:id="@+id/recordHome"
+        android:layout_alignParentTop="true"
+        android:paddingEnd="10dp"
+        android:layout_toStartOf="@id/home"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/teamsHitting"
+        android:id="@+id/teamHittingLabel"
+        android:layout_below="@id/away"
+        android:layout_alignParentStart="true"/>
+
+    <de.codecrafters.tableview.TableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableTeamHitting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        table:tableView_columnCount="12"
+        android:layout_below="@id/teamHittingLabel"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/pitching"
+        android:id="@+id/pitchingLabel"
+        android:layout_below="@id/tableTeamHitting"
+        android:layout_alignParentStart="true"
+        />
+
+    <de.codecrafters.tableview.TableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableTeamSeasonPitching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pitchingLabel"
+        android:paddingTop="10dp"
+        table:tableView_columnCount="9" />
+
+    <de.codecrafters.tableview.TableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableTeamAveragePitching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableTeamSeasonPitching"
+        android:paddingTop="10dp"
+        table:tableView_columnCount="9" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tableTeamAveragePitching"
+        >
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/roster"
+        android:id="@+id/roster"
+        android:layout_alignParentStart="true"
+        />
+        <!--android:layout_below="@id/tableTeamAveragePitching"-->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/hitting"
+        android:id="@+id/hittingRoster"
+        android:layout_below="@id/roster"
+        android:layout_alignParentStart="true"
+        />
+
+    <de.codecrafters.tableview.SortableTableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableRosterHittingAway"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/hittingRoster"
+        android:layout_alignParentStart="true"
+        table:tableView_columnCount="6" />
+
+    <de.codecrafters.tableview.SortableTableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableRosterHittingHome"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/hittingRoster"
+        android:layout_alignParentEnd="true"
+        table:tableView_columnCount="6" />
+
+   <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/bullpen"
+    android:id="@+id/bullpen"
+    android:layout_below="@id/tableRosterHittingHome"
+    android:layout_alignParentStart="true"
+    />
+
+    <de.codecrafters.tableview.SortableTableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableBullpenAway"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/bullpen"
+        android:layout_alignParentStart="true"
+        table:tableView_columnCount="6" />
+
+    <de.codecrafters.tableview.SortableTableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableBullpenHome"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/bullpen"
+        android:layout_alignParentEnd="true"
+        table:tableView_columnCount="6" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gamesLayout"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/awayImageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/mlb"
+        android:scaleType="centerInside"
+     />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Twins"
+        android:id="@+id/away"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/awayImageView"
+        android:layout_marginStart="15dp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Indians"
+        android:id="@+id/home"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/away"
+        android:layout_marginStart="15dp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/homeImageView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/home"
+        android:src="@mipmap/mlb"
+        android:scaleType="centerInside"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Jose Berrios"
+        android:id="@+id/namePitcherAway"
+        android:layout_below="@id/awayImageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Joshua Tomlin"
+        android:id="@+id/namePitcherHome"
+        android:layout_below="@id/homeImageView"
+        android:layout_toRightOf="@id/namePitcherAway"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="3"
+        android:textColor="@android:color/holo_green_dark"
+        android:id="@+id/winAway"
+        android:layout_below="@id/namePitcherAway"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2"
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/lostAway"
+        android:layout_below="@id/namePitcherAway"
+        android:layout_toRightOf="@id/winAway"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="1.34"
+        android:id="@+id/eraAway"
+        android:layout_below="@id/namePitcherAway"
+        android:layout_toRightOf="@id/lostAway"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="1"
+        android:textColor="@android:color/holo_green_dark"
+        android:id="@+id/winHome"
+        android:layout_below="@id/namePitcherHome"
+        android:layout_toRightOf="@id/eraAway"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="3"
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/lostHome"
+        android:layout_below="@id/namePitcherHome"
+        android:layout_toRightOf="@id/winHome"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2.35"
+        android:id="@+id/eraHome"
+        android:layout_below="@id/namePitcherHome"
+        android:layout_toRightOf="@id/lostHome"
+        android:layout_marginStart="15dp" />
+
+
+
+</RelativeLayout>
