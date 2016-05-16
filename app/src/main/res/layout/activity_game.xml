@@ -4,95 +4,117 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/table"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/table"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mdelacalle.com.oraculo.GameActivity"
-    android:visibility="visible">
+    android:visibility="visible"
+    tools:context="mdelacalle.com.oraculo.GameActivity">
 
     <ImageView
+        android:id="@+id/arrieta"
         android:layout_width="2000dp"
         android:layout_height="2000dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:visibility="visible"
-        android:id="@+id/arrieta"
+        android:layout_alignParentTop="true"
         android:src="@mipmap/arrieta"
+        android:visibility="visible"
         />
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Away"
         android:id="@+id/away"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Away"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="3-0"
         android:id="@+id/recordAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:paddingStart="10dp"
         android:layout_toEndOf="@id/away"
+        android:paddingStart="10dp"
+        android:text="3-0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Home"
         android:id="@+id/home"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="0-3"
-        android:id="@+id/recordHome"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:paddingEnd="10dp"
+        android:text="Home"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/recordHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_toStartOf="@id/home"
+        android:paddingEnd="10dp"
+        android:text="0-3"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         />
 
     <TextView
+        android:id="@+id/teamHittingLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/teamsHitting"
-        android:id="@+id/teamHittingLabel"
+        android:layout_alignParentStart="true"
         android:layout_below="@id/away"
-        android:layout_alignParentStart="true"/>
+        android:paddingTop="15dp"
+        android:text="@string/teamsHitting"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <de.codecrafters.tableview.TableView
         xmlns:table="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tableTeamHitting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/teamHittingLabel"
         android:paddingTop="10dp"
         table:tableView_columnCount="12"
-        android:layout_below="@id/teamHittingLabel"
        />
 
+
     <TextView
+        android:id="@+id/teamPitchingTeamLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/pitching"
-        android:id="@+id/pitchingLabel"
-        android:layout_below="@id/tableTeamHitting"
         android:layout_alignParentStart="true"
+        android:layout_below="@id/tableTeamHitting"
+        android:paddingTop="15dp"
+        android:text="@string/teamsPitching"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <de.codecrafters.tableview.TableView
+        xmlns:table="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tableTeamSeasonMLBPitching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamPitchingTeamLabel"
+        android:paddingTop="10dp"
+        table:tableView_columnCount="9"/>
+
+    <TextView
+        android:id="@+id/pitchingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tableTeamSeasonMLBPitching"
+        android:paddingTop="15dp"
+        android:text="@string/openerPitcher"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         />
 
     <de.codecrafters.tableview.TableView
@@ -124,24 +146,24 @@
             android:layout_height="fill_parent">
 
     <TextView
+        android:id="@+id/roster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/roster"
-        android:id="@+id/roster"
         android:layout_alignParentStart="true"
+        android:text="@string/roster"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         />
         <!--android:layout_below="@id/tableTeamAveragePitching"-->
 
 
     <TextView
+        android:id="@+id/hittingRoster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/hitting"
-        android:id="@+id/hittingRoster"
-        android:layout_below="@id/roster"
         android:layout_alignParentStart="true"
+        android:layout_below="@id/roster"
+        android:text="@string/hitting"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         />
 
     <de.codecrafters.tableview.SortableTableView
@@ -149,9 +171,9 @@
         android:id="@+id/tableRosterHittingAway"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:paddingTop="10dp"
-        android:layout_below="@id/hittingRoster"
         android:layout_alignParentStart="true"
+        android:layout_below="@id/hittingRoster"
+        android:paddingTop="10dp"
         table:tableView_columnCount="6" />
 
     <de.codecrafters.tableview.SortableTableView
@@ -159,19 +181,19 @@
         android:id="@+id/tableRosterHittingHome"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:paddingTop="10dp"
-        android:layout_below="@id/hittingRoster"
         android:layout_alignParentEnd="true"
+        android:layout_below="@id/hittingRoster"
+        android:paddingTop="10dp"
         table:tableView_columnCount="6" />
 
    <TextView
+    android:id="@+id/bullpen"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:text="@string/bullpen"
-    android:id="@+id/bullpen"
-    android:layout_below="@id/tableRosterHittingHome"
     android:layout_alignParentStart="true"
+    android:layout_below="@id/tableRosterHittingHome"
+    android:text="@string/bullpen"
+    android:textAppearance="?android:attr/textAppearanceMedium"
     />
 
     <de.codecrafters.tableview.SortableTableView
@@ -179,9 +201,9 @@
         android:id="@+id/tableBullpenAway"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:paddingTop="10dp"
-        android:layout_below="@id/bullpen"
         android:layout_alignParentStart="true"
+        android:layout_below="@id/bullpen"
+        android:paddingTop="10dp"
         table:tableView_columnCount="6" />
 
     <de.codecrafters.tableview.SortableTableView
@@ -189,9 +211,9 @@
         android:id="@+id/tableBullpenHome"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:paddingTop="10dp"
-        android:layout_below="@id/bullpen"
         android:layout_alignParentEnd="true"
+        android:layout_below="@id/bullpen"
+        android:paddingTop="10dp"
         table:tableView_columnCount="6" />
         </RelativeLayout>
     </ScrollView>

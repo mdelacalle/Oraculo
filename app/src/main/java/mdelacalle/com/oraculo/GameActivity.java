@@ -22,9 +22,11 @@ import mdelacalle.com.oraculo.Adapters.TableHittingPlayerAdapter;
 import mdelacalle.com.oraculo.Adapters.TableHittingPlayerHeaderAdapter;
 import mdelacalle.com.oraculo.Adapters.TablePitchingAverageAdapter;
 import mdelacalle.com.oraculo.Adapters.TablePitchingHeaderAdapter;
+import mdelacalle.com.oraculo.Adapters.TablePitchingHeaderTeamAdapter;
 import mdelacalle.com.oraculo.Adapters.TablePitchingRosterBullpenAdapter;
 import mdelacalle.com.oraculo.Adapters.TablePitchingRosterBullpenHeaderAdapter;
 import mdelacalle.com.oraculo.Adapters.TablePitchingSeasonAdapter;
+import mdelacalle.com.oraculo.Adapters.TablePitchingTeamAdapter;
 import mdelacalle.com.oraculo.data.DataFetchingListener;
 import mdelacalle.com.oraculo.data.DataUtils;
 import mdelacalle.com.oraculo.model.Game;
@@ -35,39 +37,11 @@ import mdelacalle.com.oraculo.utils.Constants;
 
 public class GameActivity extends Activity implements DataFetchingListener{
 
+    Calendar calendar= Calendar.getInstance();
     private ImageView _arrieta;
-
-
-    private static class HittingObpComparator implements Comparator<Player>
-
-    {
-        @Override
-        public int compare(Player lhs, Player rhs) {
-            if(lhs.getHitting()==null) { return 0;}
-            if (lhs.getHitting().getObp() > rhs.getHitting().getObp()){
-                return -1;
-            }
-            return +1;
-        }
-    }
-
-    private static class PitchingERAComparator implements Comparator<Player>
-
-    {
-        @Override
-        public int compare(Player lhs, Player rhs) {
-            if(lhs.getPitching()==null) { return 0;}
-            if (lhs.getPitching().getEra() > rhs.getPitching().getEra()){
-                return -1;
-            }
-            return +1;
-        }
-    }
-
     private Game _game;
     private String _homeID;
     private String _pitcherHomeID;
-    Calendar calendar= Calendar.getInstance();
     private String _pitcherAwayID;
 
     @Override
@@ -95,7 +69,6 @@ public class GameActivity extends Activity implements DataFetchingListener{
     public void onGamesReady(ArrayList<Game> games) {
 
     }
-
 
     public ArrayList<Player> getPitchers(ArrayList<Player> roster){
 
@@ -161,6 +134,13 @@ public class GameActivity extends Activity implements DataFetchingListener{
                         TableHittingHeaderAdapter adapterHeaderTableTeamHitting = new TableHittingHeaderAdapter(getBaseContext());
                         tableHitting.setHeaderAdapter(adapterHeaderTableTeamHitting);
                         tableHitting.setDataAdapter(adapterTableTeamHitting);
+
+                        TableView tablePitchingSeasonMLB = (TableView) findViewById(R.id.tableTeamSeasonMLBPitching);
+                        tablePitchingSeasonMLB.setColumnWeight(0,3);
+                        TablePitchingHeaderTeamAdapter adapterHeaderTableTeamPitching = new TablePitchingHeaderTeamAdapter(getBaseContext());
+                        tablePitchingSeasonMLB.setHeaderAdapter(adapterHeaderTableTeamPitching);
+                        TablePitchingTeamAdapter adapterTableTeamPitching = new TablePitchingTeamAdapter(getBaseContext(), teams);
+                        tablePitchingSeasonMLB.setDataAdapter(adapterTableTeamPitching);
 
                         TableHittingPlayerHeaderAdapter adapterHeaderTablePlayerHitting = new TableHittingPlayerHeaderAdapter(getBaseContext());
 
@@ -279,6 +259,13 @@ public class GameActivity extends Activity implements DataFetchingListener{
 
             TablePitchingAverageAdapter tablePitchingAverageAdapter = new TablePitchingAverageAdapter(getBaseContext(), pitchers);
             tableAveragePitching.setDataAdapter(tablePitchingAverageAdapter);
+
+
+
+
+
+
+
                     _arrieta.setVisibility(View.GONE);
                 }
             });
@@ -292,6 +279,32 @@ public class GameActivity extends Activity implements DataFetchingListener{
     @Override
     public void onDataError() {
 
+    }
+
+    private static class HittingObpComparator implements Comparator<Player>
+
+    {
+        @Override
+        public int compare(Player lhs, Player rhs) {
+            if(lhs.getHitting()==null) { return 0;}
+            if (lhs.getHitting().getObp() > rhs.getHitting().getObp()){
+                return -1;
+            }
+            return +1;
+        }
+    }
+
+    private static class PitchingERAComparator implements Comparator<Player>
+
+    {
+        @Override
+        public int compare(Player lhs, Player rhs) {
+            if(lhs.getPitching()==null) { return 0;}
+            if (lhs.getPitching().getEra() > rhs.getPitching().getEra()){
+                return -1;
+            }
+            return +1;
+        }
     }
 
 

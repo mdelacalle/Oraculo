@@ -6,4 +6,6 @@
     <string name="roster">Roster</string>
     <string name="hitting">Hitting</string>
     <string name="bullpen">Bullpen</string>
+    <string name="teamsPitching">Pitching Team</string>
+    <string name="openerPitcher">Opener Pitchers</string>
 </resources>

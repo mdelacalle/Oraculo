@@ -1,7 +1,6 @@
 package mdelacalle.com.oraculo.Adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -10,7 +9,6 @@ import java.util.List;
 
 import de.codecrafters.tableview.TableDataAdapter;
 import mdelacalle.com.oraculo.OraculoSesion;
-import mdelacalle.com.oraculo.model.SeasonHittingMLBStats;
 import mdelacalle.com.oraculo.model.SeasonPitchingMLBStats;
 import mdelacalle.com.oraculo.model.Team;
 import mdelacalle.com.oraculo.utils.DecorationUtils;
@@ -46,7 +44,7 @@ public class TablePitchingTeamAdapter extends TableDataAdapter<Team> {
 
         switch (columnIndex) {
             case 0:
-                renderedView.setText(team.getName() + "  #  " + team.getHittingRank());
+                renderedView.setText(team.getName() + "  #  " + team.getPitchingRank());
                 return renderedView;
             case 1:
                 int hits = team.getPitching().getOnbase().getH();
@@ -90,8 +88,6 @@ public class TablePitchingTeamAdapter extends TableDataAdapter<Team> {
                 return renderedView;
 
         }
-
-
         return renderedView;
     }
 }
